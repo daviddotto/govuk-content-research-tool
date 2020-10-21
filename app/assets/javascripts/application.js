@@ -10,14 +10,6 @@ $(document).ready(function () {
   contentFeedback = {}
 })
 
-let $items = $("#contentToTest *")
-
-$items.mousedown( function() {
-  $(this).siblings().css({ "user-select" : "none" , color : "lightgrey"})	
-}).mouseup( function() {
-  $items.css({ "user-select" : "auto" , color : "black"})	
-})
-
 var CFObject
 
 function highlight(text, isPositive) {
@@ -46,10 +38,14 @@ var ContentResearch = {
     bad: []
   },
   vote: function(selection, isPositive) {
-    if (isPositive) {
-      this.feedback.good.push(selection)
-    } else {
-      this.feedback.bad.push(selection)
+    var asLines = selection.split('\n');
+    asLines = asLines.filter(line => { return line.trim().length != 0 })
+    for (line of asLines) {
+      if (isPositive) {
+        this.feedback.good.push(line.trim())
+      } else {
+        this.feedback.bad.push(line.trim())
+      }
     }
     performFormatting()
     console.log(this.feedback)
@@ -57,7 +53,7 @@ var ContentResearch = {
   voteUp: function() {
     var selection = window.getSelection().toString()
     if (selection) {
-      this.vote(selection, true)
+      this.vote(selection.trim(), true)
     }
   },
   voteDown: function() {
