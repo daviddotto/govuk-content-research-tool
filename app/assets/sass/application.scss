@@ -42,13 +42,19 @@ $govuk-assets-path: '/govuk/assets/';
 
 .content-highlight {
     cursor: not-allowed;
-    pointer-events: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .content-highlight-good {
-    background-color: rgba(govuk-colour("green"), 0.15);
+    background-color: rgba(govuk-colour("green"), 0.25);
 }
 
 .content-highlight-bad {
-    background-color: rgba(govuk-colour("red"), 0.15);
+    background-color: rgba(govuk-colour("red"), 0.25);
 }
