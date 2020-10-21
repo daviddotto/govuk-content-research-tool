@@ -51,12 +51,19 @@
         </p>
         
       </div>
+
+      <p class="govuk-!-margin-top-9">
+        <a href="load">Load responses</a>
+      </p>
       
     </div>
   </div>
 
   <div class="vote-button-container">
-    <div class="vote-buttons">
+    <form action="export" class="vote-buttons">
+
+      <input id="export-field" type="hidden" name="export-json" value="{{ data['export-json'] }}">
+
       {{ govukButton({
         text: 'Does not make sense',
         classes: 'govuk-button--warning',
@@ -77,10 +84,11 @@
 
       {{ govukButton({
         text: 'Save and continue',
-        type: 'button',
+        type: 'submit',
         classes: 'govuk-button--secondary govuk-!-margin-left-9'
       }) }}
-    </div>
+        
+    </form>
   </div>
 
 {% endblock %}

@@ -62,7 +62,7 @@ var ContentResearch = {
 			}
 		}
 		performFormatting()
-		console.log(this.feedback)
+    $('input#export-field').val(JSON.stringify(this.feedback))
 	},
 	voteUp: function () {
 		var selection = window.getSelection().toString()
@@ -94,3 +94,10 @@ $(document).on('click', 'mark.content-highlight', function () {
 	removePhrase(phrase)
 	performFormatting()
 })
+
+var loadedResponses = $('input#export-field').val()
+
+if (loadedResponses.length > 0) {
+  CFObject.feedback = JSON.parse(loadedResponses)
+  performFormatting()
+}

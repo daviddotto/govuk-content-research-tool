@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Load responses
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="index">
+
+                <h1 class="govuk-heading-xl">Load responses</h1>
+
+                {{ govukTextarea ({
+                    id: 'export-json',
+                    name: 'export-json',
+                    label: {
+                        text: 'Responses code'
+                    }
+                }) }}
+
+                {{ govukButton ({
+                    html: 'Load and go back'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
