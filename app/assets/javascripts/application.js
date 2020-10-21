@@ -15,11 +15,9 @@ var CFObject
 function highlight(text, isPositive) {
   var inputText = document.getElementById("contentToTest");
   var innerHTML = inputText.innerHTML;
-  var index = innerHTML.indexOf(text);
-  if (index >= 0) { 
-   innerHTML = innerHTML.substring(0,index) + "<mark class='content-highlight " + (isPositive ? 'content-highlight-good' : 'content-highlight-bad') + "'>" + innerHTML.substring(index,index+text.length) + "</mark>" + innerHTML.substring(index + text.length);
-   inputText.innerHTML = innerHTML;
-  }
+  inputText.innerHTML = innerHTML.replace(new RegExp(text, "ig"), function(phrase) {
+    return '<mark class="content-highlight ' + (isPositive ? 'content-highlight-good' : 'content-highlight-bad') + '">' + phrase + '</mark>'
+  })
 }
 
 function performFormatting() {
