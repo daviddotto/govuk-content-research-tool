@@ -65,20 +65,20 @@
       <input id="export-field" type="hidden" name="export-json" value="{{ data['export-json'] }}">
 
       {{ govukButton({
-        text: 'Does not make sense',
-        classes: 'govuk-button--warning',
-        type: 'button',
-        attributes: {
-          'onclick': 'javascript:CFObject.voteDown();'
-        }
-      }) }}
-
-      {{ govukButton({
         text: 'Makes sense',
         type: 'button',
         classes: 'govuk-!-margin-left-2',
         attributes: {
           'onclick': 'javascript:CFObject.voteUp();'
+        }
+      }) }}
+
+      {{ govukButton({
+        text: 'Does not make sense',
+        classes: 'govuk-button--warning',
+        type: 'button',
+        attributes: {
+          'onclick': 'javascript:CFObject.voteDown();'
         }
       }) }}
 
