@@ -12,13 +12,32 @@
       <h1 class="govuk-heading-xl">
         Content research tool
       </h1>
+      <p>
+        Select the text you would like to highlight and then use the ‘Makes sense’ or ‘Does not make sense’ buttons. Select a highlight to remove it.
+      </p>
+      <h2 class="govuk-heading-m">Legend</h2>
+      <ul class="govuk-list govuk-!-margin-bottom-7 {{ 'colour-distinction' if data['colour-distinction'] == 'true' }}">
+        <li>
+          <mark class="content-highlight content-highlight-good">
+            This sentence is highlighted as ‘Makes sense’.
+          </mark>
+        </li>
+        <li>
+          <mark class="content-highlight content-highlight-bad">
+            This sentence is highlighted as ‘Does not make sense’.
+          </mark>
+        </li>
+        <li>
+          <a href="?colour-distinction={{ 'false' if data['colour-distinction'] == 'true' else 'true' }}">{{ 'Leave' if data['colour-distinction'] == 'true' else 'Enter' }} colour vision deficiency mode</a> (your current responses will be lost)
+        </li>
+      </ul>
     </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <div id="contentToTest" class="content-letter">
+      <div id="contentToTest" class="content-letter {{ 'colour-distinction' if data['colour-distinction'] == 'true' }}">
 
         <p class="govuk-!-margin-top-9">
           Sophie G Booth<br>
@@ -52,9 +71,9 @@
         
       </div>
 
-      <p class="govuk-!-margin-top-9">
-        <a href="load">Load responses</a>
-      </p>
+      <ul class="govuk-list govuk-!-margin-top-9">
+        <li><a href="load">Load responses</a></li>
+      </ul>
       
     </div>
   </div>
