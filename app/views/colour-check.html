@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Do you have colour blindness (colour vision deficiency)?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="letter">
+
+                {{ govukRadios ({
+                    idPrefix: 'colour-distinction',
+                    name: 'colour-distinction',
+                    fieldset: {
+                        legend: {
+                            text: 'Do you have colour blindness (colour vision deficiency)?',
+                            isPageHeading: true,
+                            classes: 'govuk-fieldset__legend--l'
+                        }
+                    },
+                    hint: {
+                        text: 'If so, we will use patterns to highlight words and phrases instead of colours.'
+                    },
+                    items: [
+                        {
+                            text: 'Yes',
+                            value: 'true'
+                        },
+                        {
+                            text: 'No',
+                            value: 'false'
+                        }
+                    ]
+                }) }}
+
+                {{ govukButton ({
+                    html: 'Continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

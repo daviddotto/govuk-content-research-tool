@@ -36,10 +36,31 @@
                     }
                 }) }}
 
+                <p>
+                    <a href="letter">
+                        Go back
+                    </a>
+                </p>
+
             </form>
 
         </div>
 
 </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+
+function selectAllTextInTextArea() {
+    $('textarea#export-json').select();
+}
+$('textarea#export-json').select();
+
+$('textarea#export-json').on('click', selectAllTextInTextArea)
+
+</script>
 
 {% endblock %}

@@ -28,7 +28,7 @@ function highlight(text, isPositive) {
 	})
 }
 
-function performFormatting() {
+function performFeedbackHighlightFormatting() {
 	$('#contentToTest mark.content-highlight').contents().unwrap()
 	CFObject.feedback.good.sort(function (a, b) {
 		return b.length - a.length
@@ -61,7 +61,7 @@ var ContentResearch = {
 				this.feedback.bad.push(line.trim())
 			}
 		}
-		performFormatting()
+		performFeedbackHighlightFormatting()
     $('input#export-field').val(JSON.stringify(this.feedback))
 	},
 	voteUp: function () {
@@ -92,12 +92,22 @@ function removePhrase(phrase) {
 $(document).on('click', 'mark.content-highlight', function () {
 	var phrase = $(this).text()
 	removePhrase(phrase)
-	performFormatting()
+	performFeedbackHighlightFormatting()
 })
 
 var loadedResponses = $('input#export-field').val()
 
 if (loadedResponses.length > 0) {
   CFObject.feedback = JSON.parse(loadedResponses)
-  performFormatting()
+  performFeedbackHighlightFormatting()
 }
+
+function adaptFooterBottomMargin() {
+	const hightOfVoteButtonContainer = $('.vote-button-container').height()
+	$('footer.govuk-footer').css('margin-bottom', hightOfVoteButtonContainer + 'px')
+	console.log(hightOfVoteButtonContainer)
+}
+
+adaptFooterBottomMargin()
+
+$(window).on('resize', adaptFooterBottomMargin)

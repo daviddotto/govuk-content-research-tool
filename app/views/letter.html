@@ -1,0 +1,130 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Content research tool
+      </h1>
+      <h2 class="govuk-heading-m">Instructions</h2>
+      <p>
+        Select the text you would like to highlight and then use the ‘Makes sense’ or ‘Does not make sense’ buttons.
+      </p>
+      <p>
+        Click or tap on a highlighted phrase if you have highlighted it by mistake.
+      </p>
+      <h2 class="govuk-heading-m">Example</h2>
+      <ul class="govuk-list govuk-!-margin-bottom-7 {{ 'colour-distinction' if data['colour-distinction'] == 'true' }} taller-lines">
+        <li>
+          <mark class="content-highlight content-highlight-good">
+            This sentence is highlighted as ‘Makes sense’.
+          </mark>
+        </li>
+        <li>
+          <mark class="content-highlight content-highlight-bad">
+            This sentence is highlighted as ‘Does not make sense’.
+          </mark>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div id="contentToTest" class="content-letter {{ 'colour-distinction' if data['colour-distinction'] == 'true' }} taller-lines">
+
+        <p class="govuk-!-margin-top-9">
+          Sophie G Booth<br>
+          <br>
+          55  Fore St<br>
+          TREWOON<br>
+          PL25 4YS<br>
+        </p>
+
+        <h2 class="govuk-heading-l">Lorem ipsum dolor sit amet</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh tellus molestie nunc non blandit massa. Mi tempus imperdiet nulla malesuada. Ac placerat vestibulum lectus mauris ultrices eros in cursus turpis. Aliquam faucibus purus in massa tempor nec. Nisi porta lorem mollis aliquam ut porttitor. Tristique sollicitudin nibh sit amet commodo. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Suspendisse sed nisi lacus sed viverra. Ultrices mi tempus imperdiet nulla. Eget dolor morbi non arcu risus quis. Pellentesque elit eget gravida cum sociis natoque penatibus. Amet volutpat consequat mauris nunc congue nisi vitae suscipit. Massa tincidunt dui ut ornare lectus. Ullamcorper malesuada proin libero nunc consequat interdum. Sagittis orci a scelerisque purus. Ac turpis egestas sed tempus. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi.
+        </p>
+
+        <p>
+          Diam maecenas sed enim ut sem viverra aliquet eget. Mattis pellentesque id nibh tortor id aliquet. Nibh tellus molestie nunc non blandit massa enim. Integer vitae justo eget magna fermentum iaculis eu non. Sed turpis tincidunt id aliquet risus feugiat in ante. Aliquam ut porttitor leo a diam. Suspendisse sed nisi lacus sed. Amet nisl suscipit adipiscing bibendum. Consectetur libero id faucibus nisl tincidunt eget nullam. Urna id volutpat lacus laoreet non curabitur. Imperdiet dui accumsan sit amet nulla. Ultricies leo integer malesuada nunc vel risus commodo viverra maecenas. Ac tortor vitae purus faucibus ornare suspendisse sed nisi. Nunc sed blandit libero volutpat sed cras ornare. Diam quam nulla porttitor massa id neque aliquam.
+        </p>
+
+        <p>
+          Vel quam elementum pulvinar etiam non. Ac ut consequat semper viverra nam libero. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Tristique sollicitudin nibh sit amet commodo nulla. Nam libero justo laoreet sit amet cursus sit amet. Dictum varius duis at consectetur lorem. Augue neque gravida in fermentum et sollicitudin. In eu mi bibendum neque egestas congue quisque egestas. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Volutpat odio facilisis mauris sit amet massa. Suspendisse in est ante in nibh mauris cursus mattis.
+        </p>
+
+        <p>
+          Augue eget arcu dictum varius duis at. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Morbi leo urna molestie at elementum eu facilisis sed odio. Sed id semper risus in hendrerit gravida rutrum quisque. Urna nec tincidunt praesent semper. Amet justo donec enim diam vulputate ut pharetra sit. Leo urna molestie at elementum eu. Porttitor rhoncus dolor purus non enim. Mi bibendum neque egestas congue. Massa tempor nec feugiat nisl. Commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Morbi blandit cursus risus at ultrices mi tempus imperdiet nulla. Amet dictum sit amet justo donec enim diam. Diam sollicitudin tempor id eu nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. Morbi leo urna molestie at elementum eu facilisis sed. Scelerisque varius morbi enim nunc faucibus. Venenatis cras sed felis eget velit aliquet sagittis.
+        </p>
+
+        <p>
+          Est lorem ipsum dolor sit amet consectetur. Vel orci porta non pulvinar. Nisi porta lorem mollis aliquam. Ut tristique et egestas quis ipsum suspendisse. Ante in nibh mauris cursus mattis molestie a iaculis at. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Gravida in fermentum et sollicitudin. At tempor commodo ullamcorper a lacus vestibulum sed arcu non. Fermentum et sollicitudin ac orci. Ut faucibus pulvinar elementum integer enim neque volutpat. Ipsum nunc aliquet bibendum enim facilisis gravida.
+        </p>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="vote-button-container">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="vote-buttons-wrapper">
+
+              <form action="export" class="vote-buttons {{ 'colour-distinction' if data['colour-distinction'] == 'true' }}">
+
+                <input id="export-field" type="hidden" name="export-json" value="{{ data['export-json'] }}">
+
+                  {{ govukButton({
+                    text: 'Makes sense',
+                    type: 'button',
+                    classes: 'button--good',
+                    attributes: {
+                      'onclick': 'javascript:CFObject.voteUp();'
+                    }
+                  }) }}
+
+                  {{ govukButton({
+                    text: 'Does not make sense',
+                    classes: 'govuk-button--warning button--bad',
+                    type: 'button',
+                    attributes: {
+                      'onclick': 'javascript:CFObject.voteDown();'
+                    }
+                  }) }}
+
+                  <div class="spacer"></div>
+
+                  {{ govukButton({
+                    text: 'Save and continue',
+                    type: 'submit',
+                    classes: 'govuk-button--secondary'
+                  }) }}
+
+                </form>
+
+            </div>
+            
+          </div>
+          
+        </div>
+
+      </div>
+
+  </div>
+
+{% endblock %}
