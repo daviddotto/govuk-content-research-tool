@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Instructions
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                <h1 class="govuk-heading-xl">Instructions</h1>
+
+                <h2 class="govuk-heading-l">1. Select some text you want to highlight</h2>
+
+                <p>You can click and drag with your mouse over the text if you are using one. If you are using a phone or tablet you will need to hold your finger down on the text and use the on-screen controls.</p>
+
+                <img src="" alt="">
+
+                <h2 class="govuk-heading-l">2. Press either the “Makes sense” or “Does not make sense” button</h2>
+
+                <p>These buttons will highlight the phrase you have selected so we can understand if you understand or have trouble understanding that phrase.</p>
+
+                <img src="" alt="">
+
+                <h2 class="govuk-heading-l">3. Repeat until you have finished giving your feedback</h2>
+
+                <p>You might need to scroll the page down to see more of the paragraphs and sections.</p>
+
+                <img src="" alt="">
+
+
+                <h2 class="govuk-heading-l">4. Press “I am finished”</h2>
+
+                <p>The researcher will explain what to do next.</p>
+
+                <img src="" alt="">
+
+                {{ govukButton ({
+                    html: 'Save and continue'
+                }) }}
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}
