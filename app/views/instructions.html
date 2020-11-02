@@ -19,37 +19,62 @@
 
         <div class="govuk-grid-column-two-thirds">
 
-            <form method="post">
+            <form action="letter" class="instructions">
 
                 <h1 class="govuk-heading-xl">Instructions</h1>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
                 <h2 class="govuk-heading-l">1. Select some text you want to highlight</h2>
 
                 <p>You can click and drag with your mouse over the text if you are using one. If you are using a phone or tablet you will need to hold your finger down on the text and use the on-screen controls.</p>
 
-                <img src="" alt="">
+                <img src="/public/images/selection.png" alt="A screenshot of some words selected within a sentence.">
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
                 <h2 class="govuk-heading-l">2. Press either the “Makes sense” or “Does not make sense” button</h2>
 
                 <p>These buttons will highlight the phrase you have selected so we can understand if you understand or have trouble understanding that phrase.</p>
 
-                <img src="" alt="">
+                <img src="/public/images/select-buttons.png" alt="A screenshot of some words selected within a sentence with two buttons underneath reading 'Makes sense' and 'Does not make sense'.">
+
+                <h3 class="govuk-heading-m">Examples</h3>
+                <ul class="govuk-list govuk-!-margin-bottom-7 {{ 'colour-distinction' if data['colour-distinction'] == 'true' }} taller-lines">
+                    <li>
+                    <mark class="content-highlight content-highlight-good">
+                        This sentence is highlighted as ‘Makes sense’.
+                    </mark>
+                    </li>
+                    <li>
+                    <mark class="content-highlight content-highlight-bad">
+                        This sentence is highlighted as ‘Does not make sense’.
+                    </mark>
+                    </li>
+                </ul>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
                 <h2 class="govuk-heading-l">3. Repeat until you have finished giving your feedback</h2>
 
                 <p>You might need to scroll the page down to see more of the paragraphs and sections.</p>
 
-                <img src="" alt="">
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
                 <h2 class="govuk-heading-l">4. Press “I am finished”</h2>
 
                 <p>The researcher will explain what to do next.</p>
 
-                <img src="" alt="">
+                <img src="/public/images/complete.png" alt="A screenshot of some words highlighted within some sentences with a button underneath reading 'I am finished'.">
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                <input type="hidden" name="colour-distinction" value="true">
 
                 {{ govukButton ({
-                    html: 'Save and continue'
+                    html: 'Start now',
+                    isStartButton: true
                 }) }}
 
             </form>

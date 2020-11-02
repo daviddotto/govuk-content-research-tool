@@ -105,3 +105,13 @@ $govuk-assets-path: '/govuk/assets/';
 		line-height: 2.2 !important;
 	}
 }
+
+.instructions img {
+	display: block;
+	max-width: 100%;
+	width: 400px;
+	border: 2px solid #505a5f;
+	box-shadow: 4px 4px 0 rgba(#505a5f, 0.4);
+	margin-bottom: 60px;
+	margin-top: 20px;
+}
