@@ -1,4 +1,4 @@
-# Setting up git and doing your first commit
+# Setting up Git using the terminal
 
 Git helps track changes in code and lets you undo mistakes or identify bugs. It’s also used to collaborate with other people - so you can share your code with other designers and developers on your team (or with other teams!). Git is a type of version control software.
 
@@ -34,6 +34,11 @@ git init
 ```
 
 This sets up git to track the files in your prototype folder.
+
+The default branch created by the `git init` command is called `master`, which is a [potentially offensive term](https://sfconservancy.org/news/2020/jun/23/gitbranchname/). Rename the current branch to `main` instead:
+```
+git branch -M main
+```
 
 ## 3) Check the Git status
 
@@ -75,7 +80,7 @@ git commit -m "First commit"
 ```
 The message you put in the speech marks should be descriptive of the changes you are committing. This will help in the future if you or someone else needs to look back at your changes and know why you made them.
 
-More information on [writing good commit messages](https://github.com/alphagov/styleguides/blob/master/git.md#commit-messages) is in the GDS styleguide.
+Read more about writing good commit messages in the [Git style guide in the 'How to store source code' page of the GDS Way](https://gds-way.cloudapps.digital/standards/source-code.html#commit-messages).
 
 ## 5) Check Git status again
 
